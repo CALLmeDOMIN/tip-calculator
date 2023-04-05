@@ -1,17 +1,16 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { type } from "os";
-import { use, useState } from "react";
+import { useState } from "react";
 
 const Home: NextPage = () => {
-  let [billVal, setBillVal] = useState('')
-  let billAsNumber = Number(parseFloat(billVal).toFixed(2))
+  const [billVal, setBillVal] = useState('')
+  const billAsNumber = Number(parseFloat(billVal).toFixed(2))
 
-  let [peopleVal, setPeopleVal] = useState('')
+  const [peopleVal, setPeopleVal] = useState('')
   const peopleAsNumber = Number(peopleVal)
 
   const [tip, setTip] = useState(0.00)
-  let total = Number(parseFloat(String(billAsNumber / peopleAsNumber + tip)).toFixed(2))
+  const total = Number(parseFloat(String(billAsNumber / peopleAsNumber + tip)).toFixed(2))
 
   const calculate = (percent: number) => Number(parseFloat(String((billAsNumber * percent / 100 / peopleAsNumber))).toFixed(2))
 
@@ -48,7 +47,7 @@ const Home: NextPage = () => {
             <div>
               <div className="flex ">
                 <h1 className="text-sm text-gray-600 font-semibold">Number of People</h1>
-                <h1 className={`text-sm text-red-600/70 font-bold ml-auto transition-all ${peopleAsNumber == 0 ? 'opacity-100' : 'opacity-0'}`}>Can't be zero</h1>
+                <h1 className={`text-sm text-red-600/70 font-bold ml-auto transition-all ${peopleAsNumber == 0 ? 'opacity-100' : 'opacity-0'}`}>Can&apos;t be zero</h1>
               </div>
               <label>
                 <input value={peopleVal} onChange={e => setPeopleVal(e.target.value)} dir="rtl" type="text" placeholder="0" className={`w-full bg-sky-100/30 text-teal-900 bg-[url('/icon-person.svg')] bg-no-repeat bg-origin-content p-1.5 px-3 bg-left text-2xl rounded-md transition-all ${peopleAsNumber == 0 ? 'border-2 border-red-600/70' : 'border-none'}`} />
