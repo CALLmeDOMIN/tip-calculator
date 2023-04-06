@@ -26,7 +26,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-cyan-100 min-h-screen flex md:flex-row flex-col md:items-center justify-end md:justify-center font-SpaceMono">
-        <div className="flex md:flex-row flex-col md:max-w-[40vw]  md:h-auto p-8 bg-white rounded-3xl shadow-xl">
+        <div className="flex md:flex-row flex-col md:max-w-3xl md:h-auto p-8 bg-white rounded-3xl shadow-xl">
           <div className="md:w-1/2 mb-8 md:mr-8 flex flex-col">
             <div className="mb-10">
               <div className="flex ">
@@ -62,14 +62,14 @@ const Home: NextPage = () => {
           </div>
           <div className="md:w-1/2 flex flex-col bg-teal-900 rounded-xl p-6 md:p-10 text-white">
             <div className="flex">
-              <div className="w-1/2">
+              <div >
                 <h1 className="font-semibold">Tip Amount</h1>
                 <h2 className="text-sm text-gray-300">/ person</h2>
               </div>
               <h3 className="ml-auto font-bold text-5xl text-teal-400">${(peopleAsNumber > 0 && billAsNumber > 0) ? tip : '0.00'}</h3>
             </div>
             <div className="flex my-8">
-              <div className="w-1/2">
+              <div>
                 <h1 className="font-semibold">Total</h1>
                 <h2 className="text-sm text-gray-300">/ person</h2>
               </div>
